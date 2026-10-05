@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { Fragment } from "react";
 import {
@@ -23,6 +23,7 @@ import { api } from "@/utils/api";
 interface BreadcrumbEntry {
 	name: string;
 	href?: string;
+	icon?: LucideIcon;
 	dropdownItems?: {
 		name: string;
 		href: string;
@@ -64,7 +65,13 @@ export const BreadcrumbSidebar = ({ list }: Props) => {
 										) : (
 											<BreadcrumbLink href={item?.href} asChild={!!item?.href}>
 												{item.href ? (
-													<Link href={item?.href}>{item?.name}</Link>
+													<Link
+														href={item?.href}
+														className="flex items-center gap-1.5"
+													>
+														{item.icon && <item.icon className="size-4" />}
+														{item?.name}
+													</Link>
 												) : (
 													<BreadcrumbPage>{item?.name}</BreadcrumbPage>
 												)}
