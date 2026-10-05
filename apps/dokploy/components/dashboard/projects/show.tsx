@@ -2,6 +2,7 @@ import {
 	AlertTriangle,
 	ArrowUpDown,
 	BookIcon,
+	Folder,
 	FolderInput,
 	Loader2,
 	MoreHorizontalIcon,
@@ -201,7 +202,7 @@ export const ShowProjects = () => {
 	return (
 		<>
 			<BreadcrumbSidebar
-				list={[{ name: "Projects", href: "/dashboard/projects" }]}
+				list={[{ name: "Projects", href: "/dashboard/projects", icon: Folder }]}
 			/>
 			<div className="w-full">
 				<Card className="h-full bg-sidebar p-2.5 rounded-xl  ">

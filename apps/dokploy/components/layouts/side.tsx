@@ -1245,6 +1245,9 @@ export default function Page({ children }: Props) {
 													href={activeItem?.url || "/"}
 													className="flex items-center gap-1.5"
 												>
+													{activeItem?.icon && (
+														<activeItem.icon className="h-4 w-4" />
+													)}
 													{activeItem?.title}
 												</Link>
 											</BreadcrumbLink>
